@@ -107,7 +107,7 @@ export class SlotNewComponent extends NavigableComponent {
 
         if (this.featureSupported && this._slotsList && this._slotsList.length + 1 >= slotsQuota) {
           let quotaMessage = '';
-          const sku = this._siteObj.properties.sku;
+          const sku = this._siteObj.properties && this._siteObj.properties.sku;
           if (!!sku && sku.toLowerCase() === 'dynamic') {
             quotaMessage = this._translateService.instant(PortalResources.slotNew_dynamicQuotaReached);
           } else {
